@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.example.calculatorkotlin.databinding.ActivityMainBinding
+import java.lang.ArithmeticException
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,6 +53,18 @@ class MainActivity : AppCompatActivity() {
             false
         } else {
             value.contains("-") || value.contains("*") || value.contains("+") || value.contains("/")
+        }
+    }
+
+    fun onEqual(view: View) {
+        if(lastNumeric) {
+            var tvValue = binding.tvInput.text.toString()
+
+            try {
+
+            } catch(e: ArithmeticException) {
+                e.printStackTrace()
+            }
         }
     }
 }
