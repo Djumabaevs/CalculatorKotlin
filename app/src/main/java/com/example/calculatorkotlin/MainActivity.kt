@@ -59,8 +59,25 @@ class MainActivity : AppCompatActivity() {
     fun onEqual(view: View) {
         if(lastNumeric) {
             var tvValue = binding.tvInput.text.toString()
+            var prefix = ""
 
             try {
+                if(tvValue.startsWith("-")){
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+
+                if(tvValue.contains("-")) {
+                    val splitValue = tvValue.split("-")
+                    var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()) {
+                        one += prefix
+                    }
+
+                    binding.tvInput.text = (one.toDouble() - two.toDouble()).toString()
+                }
 
             } catch(e: ArithmeticException) {
                 e.printStackTrace()
