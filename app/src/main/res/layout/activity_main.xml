@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"/>
 
+    <!--Row 1-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,20 +29,24 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="7"
-            android:onClick="onDigit"/>
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="7" />
+
         <Button
             android:id="@+id/btn_eight"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="8"
-            android:onClick="onDigit"/>
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="8" />
         <Button
             android:id="@+id/btn_nine"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/button_color"
             android:text="9"
             android:onClick="onDigit"/>
         <Button
@@ -48,7 +54,146 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/button_color"
             android:text="/"
+            android:onClick="onDigit"/>
+
+
+
+
+    </LinearLayout>
+    <!--Row 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_four"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn_five"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="5" />
+        <Button
+            android:id="@+id/btn_six"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="6"
+            android:onClick="onDigit"/>
+        <Button
+            android:id="@+id/btn_multiply"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="*"
+            android:onClick="onDigit"/>
+
+
+
+
+    </LinearLayout>
+    <!--Row 3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_one"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn_two"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="2" />
+        <Button
+            android:id="@+id/btn_three"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="3"
+            android:onClick="onDigit"/>
+        <Button
+            android:id="@+id/btn_substraction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="-"
+            android:onClick="onDigit"/>
+
+
+
+
+    </LinearLayout>
+    <!--Row 4-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_decimal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btn_zero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:onClick="onDigit"
+            android:text="0" />
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="CLR"
+            android:onClick="onDigit"/>
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="+"
             android:onClick="onDigit"/>
 
 
