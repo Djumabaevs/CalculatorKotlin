@@ -62,26 +62,71 @@ class MainActivity : AppCompatActivity() {
             var prefix = ""
 
             try {
-                if(tvValue.startsWith("-")){
+                if(tvValue.startsWith("-")) {
                     prefix = "-"
                     tvValue = tvValue.substring(1)
                 }
 
-                if(tvValue.contains("-")) {
-                    val splitValue = tvValue.split("-")
-                    var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
-                    var two = splitValue[1]
+                    if (tvValue.contains("-")) {
+                        val splitValue = tvValue.split("-")
+                        var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
+                        var two = splitValue[1]
 
-                    if(prefix.isNotEmpty()) {
-                        one += prefix
+                        if (!prefix.isEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text =
+                            removeZerosAfterDot((one.toDouble() - two.toDouble()).toString())
+
+                    } else if (tvValue.contains("+")) {
+                        val splitValue = tvValue.split("+")
+                        var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
+                        var two = splitValue[1]
+
+                        if (!prefix.isEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text =
+                            removeZerosAfterDot((one.toDouble() + two.toDouble()).toString())
+
+                    } else if (tvValue.contains("*")) {
+                        val splitValue = tvValue.split("*")
+                        var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
+                        var two = splitValue[1]
+
+                        if (!prefix.isEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text =
+                            removeZerosAfterDot((one.toDouble() * two.toDouble()).toString())
+
+                    } else if (tvValue.contains("/")) {
+                        val splitValue = tvValue.split("/")
+                        var one = splitValue[0]   //99-1 :   value one: 99 and value two: 1
+                        var two = splitValue[1]
+
+                        if (!prefix.isEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text =
+                            removeZerosAfterDot((one.toDouble() / two.toDouble()).toString())
                     }
-
-                    binding.tvInput.text = (one.toDouble() - two.toDouble()).toString()
-                }
 
             } catch(e: ArithmeticException) {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun removeZerosAfterDot(result: String): String {
+        var value = result
+        if(result.contains(".0")) {
+            value = result.substring(0, result.length - 2)
+        }
+        return value
     }
 }
